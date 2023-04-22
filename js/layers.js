@@ -52,6 +52,10 @@ addLayer("p", {
     grid: {
         rows: 5, // If these are dynamic make sure to have a max value as well!
         cols: 5,
+        100: {
+            title: "upgrade 4",
+        },
+    
         101: {
             title: "upgrade 4",
         },
@@ -67,17 +71,13 @@ addLayer("p", {
         104: {
             title: "upgrade 4",
         },
-    
-        105: {
-            title: "upgrade 4",
-        },
 
         
 
         getStartData() {
             return 0
         },
-        getUnlocked() { // Default
+        getUnlocked(grid) { // Default
             return true
         },
         getCanClick(data, id) {

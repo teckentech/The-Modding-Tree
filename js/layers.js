@@ -22,12 +22,12 @@ addLayer("p", {
         return new Decimal(1)
     },
     upgrades: {
-        11: {
+        101: {
             title: "upgrade 1",
             description: "Double your point gain.",
             cost: new Decimal(1),
         },
-        12: {
+        102: {
             title: "upgrade 2",
             description: "Double your point gain.",
             cost: new Decimal(2),
@@ -38,7 +38,7 @@ addLayer("p", {
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
         },
 
-        13: {
+        103: {
             title: "upgrade 3",
             description: "boost your prestige points",
             cost: new Decimal(5),
@@ -52,8 +52,7 @@ addLayer("p", {
     grid: {
         rows: 5, // If these are dynamic make sure to have a max value as well!
         cols: 5,
-        getStartData(id) {
-
+        getStartData(upgrades) {
         },
         getUnlocked(upgrades) { // Default
             return true

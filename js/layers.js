@@ -68,7 +68,7 @@ addLayer("p", {
             return data 
         },
     
-        etc
+        
     },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [

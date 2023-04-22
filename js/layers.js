@@ -53,7 +53,7 @@ addLayer("p", {
         rows: 5, // If these are dynamic make sure to have a max value as well!
         cols: 5,
         getStartData(id) {
-            title: "upgrade 3",
+
         },
         getUnlocked(upgrades) { // Default
             return true

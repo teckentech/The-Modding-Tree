@@ -56,7 +56,7 @@ addLayer("p", {
     grid: {
         rows: 4, // If these are dynamic make sure to have a max value as well!
         cols: 5,
-        getStartData(14) {
+        getStartData(p) {
             return 0
         },
         getUnlocked(id) { // Default

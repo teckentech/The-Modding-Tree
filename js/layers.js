@@ -64,7 +64,7 @@ addLayer("p", {
         onClick(data, id) { 
             player[this.layer].grid[id]++
         },
-        getDisplay(data, grid) {
+        getDisplay(data, id) {
             return data 
         },
     

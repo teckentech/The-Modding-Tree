@@ -47,19 +47,37 @@ addLayer("p", {
             return player.points.add(1).pow(0.15)
         },
     },
-
-    14: {
-        title: "upgrade 4",
-    },
     },
 
     grid: {
-        rows: 4, // If these are dynamic make sure to have a max value as well!
+        rows: 5, // If these are dynamic make sure to have a max value as well!
         cols: 5,
-        getStartData(p) {
+        101: {
+            title: "upgrade 4",
+        },
+    
+        102: {
+            title: "upgrade 4",
+        },
+    
+        103: {
+            title: "upgrade 4",
+        },
+    
+        104: {
+            title: "upgrade 4",
+        },
+    
+        105: {
+            title: "upgrade 4",
+        },
+
+        
+
+        getStartData() {
             return 0
         },
-        getUnlocked(id) { // Default
+        getUnlocked() { // Default
             return true
         },
         getCanClick(data, id) {

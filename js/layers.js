@@ -47,12 +47,16 @@ addLayer("p", {
             return player.points.add(1).pow(0.15)
         },
     },
+
+    14: {
+        title: "upgrade 4",
+    },
     },
 
     grid: {
         rows: 4, // If these are dynamic make sure to have a max value as well!
         cols: 5,
-        getStartData(id) {
+        getStartData(14) {
             return 0
         },
         getUnlocked(id) { // Default

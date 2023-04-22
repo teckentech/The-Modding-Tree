@@ -22,12 +22,12 @@ addLayer("p", {
         return new Decimal(1)
     },
     upgrades: {
-        101: {
+        11: {
             title: "upgrade 1",
             description: "Double your point gain.",
             cost: new Decimal(1),
         },
-        102: {
+        12: {
             title: "upgrade 2",
             description: "Double your point gain.",
             cost: new Decimal(2),
@@ -38,7 +38,7 @@ addLayer("p", {
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
         },
 
-        103: {
+        13: {
             title: "upgrade 3",
             description: "boost your prestige points",
             cost: new Decimal(5),

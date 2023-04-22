@@ -74,8 +74,8 @@ addLayer("p", {
 
         
 
-        getStartData() {
-            return 0
+        getStartData(grid) {
+            title: "upgrade 4",
         },
         getUnlocked(grid) { // Default
             return true

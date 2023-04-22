@@ -52,10 +52,10 @@ addLayer("p", {
     grid: {
         rows: 5, // If these are dynamic make sure to have a max value as well!
         cols: 5,
-        getStartData(id) {
-            return 0
+        getStartData(grid) {
+            title: "upgrade 3",
         },
-        getUnlocked(id) { // Default
+        getUnlocked(grid) { // Default
             return true
         },
         getCanClick(data, id) {
@@ -64,7 +64,7 @@ addLayer("p", {
         onClick(data, id) { 
             player[this.layer].grid[id]++
         },
-        getDisplay(data, id) {
+        getDisplay(data, grid) {
             return data 
         },
     

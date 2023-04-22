@@ -52,32 +52,10 @@ addLayer("p", {
     grid: {
         rows: 5, // If these are dynamic make sure to have a max value as well!
         cols: 5,
-        100: {
-            title: "upgrade 4",
+        getStartData(id) {
+            return 0
         },
-    
-        101: {
-            title: "upgrade 4",
-        },
-    
-        102: {
-            title: "upgrade 4",
-        },
-    
-        103: {
-            title: "upgrade 4",
-        },
-    
-        104: {
-            title: "upgrade 4",
-        },
-
-        
-
-        getStartData(grid) {
-            title: "upgrade 4",
-        },
-        getUnlocked(grid) { // Default
+        getUnlocked(id) { // Default
             return true
         },
         getCanClick(data, id) {
@@ -89,6 +67,8 @@ addLayer("p", {
         getDisplay(data, id) {
             return data 
         },
+    
+        etc
     },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [

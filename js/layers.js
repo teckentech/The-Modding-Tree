@@ -72,6 +72,8 @@ var num
            //     var num = i*100+j
             if (id == 100+1)
             return true
+            if (id == 100+1)
+            return true
             //    }
           //  }
         },

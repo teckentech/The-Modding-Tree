@@ -66,8 +66,8 @@ addLayer("p", {
             }
           },
         getUnlocked(id) { // Default
-            for (i = 0; i < cols; i++){
-                for (j = 0; j < rows; j++)
+            for (i = 1; i < cols+1; i++){
+                for (j = 1; j < rows+1; j++)
             if (id == i*100+j)
             return true
             }

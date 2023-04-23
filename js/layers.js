@@ -70,7 +70,7 @@ var num
 var rowsA = this.rows
 var colsA = this.cols
            for (var i = 1; i < colsA+1; i = i+1){
-                for (var j = 1; j < rowsA+1; j = j+1){
+                for (var j = 1; j < rowsA+2; j = j+1){
                 var num = (i*100)+j
             if (id == num)
             return true

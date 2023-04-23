@@ -68,6 +68,14 @@ addLayer("p", {
         getUnlocked(id) { // Default
             if (id == 101)
             return true
+            if (id == 102)
+            return true
+            if (id == 103)
+            return true
+            if (id == 104)
+            return true
+            if (id == 105)
+            return true
         },
         getCanClick(data, id) {
             return true

@@ -21,6 +21,11 @@ addLayer("p", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
+
+    midsection: [
+        "grid"
+      ],
+
     upgrades: {
         11: {
             title: "upgrade 1",

@@ -66,16 +66,11 @@ addLayer("p", {
             }
           },
         getUnlocked(id) { // Default
-            if (id == 101)
+            for (i = 0; i < cols; i++){
+                for (j = 0; j < rows; j++)
+            if (id == i*100+j)
             return true
-            if (id == 102)
-            return true
-            if (id == 103)
-            return true
-            if (id == 104)
-            return true
-            if (id == 105)
-            return true
+            }
         },
         getCanClick(data, id) {
             return true

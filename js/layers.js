@@ -48,6 +48,31 @@ addLayer("p", {
         },
     },
     },
+
+    grid: {
+        rows: 4, // If these are dynamic make sure to have a max value as well!
+        cols: 5,
+        getStartData(id) {
+            if (id == 203) { // row 2, column 3
+              return "tree"
+            }
+            else {
+              return "empty"
+            }
+          },
+        getUnlocked(id) { // Default
+            return true
+        },
+        getCanClick(data, id) {
+            return true
+        },
+        onClick(data, id) { 
+            player[this.layer].grid[id]++
+        },
+        getDisplay(data, id) {
+            return data 
+        },
+    },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},

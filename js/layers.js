@@ -66,9 +66,11 @@ addLayer("p", {
             }
           },
         getUnlocked(id) { // Default
-            for (i = 1; i < cols+1; i++){
-                for (j = 1; j < rows+1; j++)
-            if (id == i*100+j)
+var num
+            for (var i = 1; i < cols+1; i = i+1){
+                for (var j = 1; j < rows+1; j = j+1)
+                var num = i*100+j
+            if (id == num)
             return true
             }
         },

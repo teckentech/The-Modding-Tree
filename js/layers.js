@@ -57,6 +57,7 @@ addLayer("p", {
     grid: {
         rows: 4, // If these are dynamic make sure to have a max value as well!
         cols: 5,
+        
         getStartData(id) {
             if (id == 203) { // row 2, column 3
               return "tree"
@@ -78,7 +79,16 @@ var colsA = this.cols
             }
         },
         getCanClick(data, id) {
-            return true
+            var num
+            var rowsA = this.rows
+            var colsA = this.cols
+            for (var i = 1; i < colsA+1; i = i+1){
+                for (var j = 1; j < rowsA+2; j = j+1){
+                var num = (i*100)+j
+            if (id == num)
+            return false
+                }
+            }
         },
         onClick(data, id) { 
             player[this.layer].grid[id]++

@@ -61,6 +61,7 @@ addLayer("p", {
             }
           },
         getUnlocked(id) { // Default
+            if (id == 101)
             return true
         },
         getCanClick(data, id) {

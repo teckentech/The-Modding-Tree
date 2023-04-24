@@ -79,18 +79,11 @@ var colsA = this.cols
             }
         },
         getCanClick(data, id) {
-            var num
-            var rowsA = this.rows
-            var colsA = this.cols
-            for (var i = 1; i < colsA+1; i = i+1){
-                for (var j = 1; j < rowsA+2; j = j+1){
-                var num = (i*100)+j
-            if (id == num)
-            return false
-                }
-            }
+
         },
         onClick(data, id) { 
+        //    if (data = )
+        //    setGridData
             player[this.layer].grid[id]++
         },
         getDisplay(data, id) {

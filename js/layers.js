@@ -22,19 +22,9 @@ addLayer("p", {
         return new Decimal(1)
     },
 
-    tabFormat: [
-        "main-display",
-        "prestige-button",
-        "blank",
-        "milestones",
-        "blank",
-        "upgrades",
-        "blank",
-        "buyables",
-        "blank",
-        "grid",
-        [this.layer, grid2]
-    ],
+midsection: [
+"grid"
+],
     
 
     upgrades: {
@@ -70,8 +60,8 @@ addLayer("p", {
         cols: 5,
         
         getStartData(id) {
-            if (id == 101) { // row 2, column 3
-              return "empty"
+            if (id == 202) { 
+              return "ree"
             }
           },
         getUnlocked(id) { // Default
@@ -87,19 +77,17 @@ var colsA = this.cols
             }
         },
         getCanClick(data, id) {
-            if(data != "empty"){
-            setGridData(this.layer, id, "empty")
-            }
-            else if(data == "empty"){
-                var GridOb
 
-                setGridData(this.layer, id, "empty")
-            }
         },
         onClick(data, id) { 
-        //    if (data = )
-        //    setGridData
-            player[this.layer].grid[id]++
+            if(data != "empty"){
+                setGridData(this.layer, id, "empty")
+                }
+                else if(data == "empty"){
+                    var GridOb
+    
+                    setGridData(this.layer, id, "empty")
+                }
         },
         getDisplay(data, id) {
             return data 

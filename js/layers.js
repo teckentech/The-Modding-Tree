@@ -33,7 +33,8 @@ addLayer("p", {
         "buyables",
         "blank",
         "grid",
-        // ["p-proxy", ["p", grid]]
+        "blank",
+        ["pProxy","grid"]
     ],
     
 
@@ -67,7 +68,7 @@ addLayer("p", {
 
     grid: {
         rows: 5, // If these are dynamic make sure to have a max value as well!
-        cols: 1,
+        cols: 2,
         
         getStartData(id) {
             if (id == 202) { 
@@ -79,32 +80,14 @@ addLayer("p", {
             
           },
         getUnlocked(id) { // Default
-var num
-var rowsA = this.rows
-var colsA = this.cols
-                difRows = (roswA-colsA)+1
-                difCols = (colsA-rowsA)+1
-
-           for (var i = 1; i < colsA+1; i = i+1){
-                for (var j = 1; j < rowsA+1; j = j+1){
-                var num = (i*100)+j
-            if (id == num)
-            return true
-                }
-            }
+return true
         },
         getCanClick(data, id) {
-
+            return true
         },
         onClick(data, id) { 
-         //   if(data != "empty"){
-         //       setGridData(this.layer, id, "empty")
-         //       }
-         //       else if(data == "empty"){
-         //           var GridOb
-    
-           //         setGridData(this.layer, id, "empty")
-            //    }
+            setGridData("p", id, punt)
+            
         },
         getDisplay(data, id) {
             return data 
@@ -120,18 +103,21 @@ var colsA = this.cols
     layerShown(){return true}
 })
 
-addLayer("p-proxy",{
+addLayer("pProxy",{
     name: "proxy", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "p", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 1,
     color: "#4BDC13",
+    
 
     startData() { return {
         unlocked: true,
-		points: new Decimal(0),
+        number: new Decimal(0),
     }},
+    baseAmount() {return player.selez},
 
     tabFormat: [
+        
         "main-display",
         "prestige-button",
         "blank",
@@ -142,38 +128,36 @@ addLayer("p-proxy",{
         "buyables",
         "blank",
         "grid",
-        // ["p-proxy", ["p", grid]]
     ],
 
+selez: new String(),
+
     grid: {
-        rows: 2, // If these are dynamic make sure to have a max value as well!
+        rows: 1, // If these are dynamic make sure to have a max value as well!
         cols: 4,
         getStartData(id) {
             if (id == 101) { 
-                return "empty"
+                return "pappagallo"
               }
-              else {
-                  return "empty"
+              if (id == 102) { 
+                return "cane"
+              }
+              if (id == 103) { 
+                return "gatto"
+              }
+              if (id == 104) { 
+                return "topo"
               }
         },
         
         getUnlocked(id) { // Default
-var rowsA2 = this.rows
-var colsA2 = this.cols
-           for (var i = 1; i < colsA2+1; i = i+1){
-                for (var j = 1; j < rowsA2+2; j = j+1){
-                var num = (i*100)+j
-            if (id == (i*100)+j)
-            return true
-                }
-                j = 1
-            }
+return true
         },
         getCanClick(data, id) {
             return true
         },
         onClick(data, id) { 
-            player[this.layer].grid[id]++
+            punt = data
         },
         getDisplay(data, id) {
             return data 

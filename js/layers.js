@@ -22,10 +22,19 @@ addLayer("p", {
         return new Decimal(1)
     },
 
-      midsection: [
-         "grid"
-      ],
-
+    tabFormat: [
+        "main-display",
+        "prestige-button",
+        "blank",
+        "milestones",
+        "blank",
+        "upgrades",
+        "blank",
+        "buyables",
+        "blank",
+        "grid",
+        [this.layer, grid2]
+    ],
     
 
     upgrades: {
@@ -56,7 +65,75 @@ addLayer("p", {
     },
     },
 
-   
+    grid: {
+        rows: 5, // If these are dynamic make sure to have a max value as well!
+        cols: 5,
+        
+        getStartData(id) {
+            if (id == 101) { // row 2, column 3
+              return "empty"
+            }
+          },
+        getUnlocked(id) { // Default
+var num
+var rowsA = this.rows
+var colsA = this.cols
+           for (var i = 1; i < colsA+1; i = i+1){
+                for (var j = 1; j < rowsA+2; j = j+1){
+                var num = (i*100)+j
+            if (id == num)
+            return true
+                }
+            }
+        },
+        getCanClick(data, id) {
+            if(data != "empty"){
+            setGridData(this.layer, id, "empty")
+            }
+            else if(data == "empty"){
+                var GridOb
+
+                setGridData(this.layer, id, "empty")
+            }
+        },
+        onClick(data, id) { 
+        //    if (data = )
+        //    setGridData
+            player[this.layer].grid[id]++
+        },
+        getDisplay(data, id) {
+            return data 
+        },
+    },
+
+    grid2: {
+        rows: 1, // If these are dynamic make sure to have a max value as well!
+        cols: 6,
+        getStartData(id) {
+            return 0
+        },
+        getUnlocked(id) { // Default
+            var num
+var rowsA = this.rows
+var colsA = this.cols
+           for (var i = 1; i < colsA+1; i = i+1){
+                for (var j = 1; j < rowsA+2; j = j+1){
+                var num = (i*100)+j
+            if (id == num)
+            return true
+                }
+            }
+        },
+        getCanClick(data, id) {
+            return true
+        },
+        onClick(data, id) { 
+            player[this.layer].grid[id]++
+        },
+        getDisplay(data, id) {
+            return data 
+        },
+    },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},

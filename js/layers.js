@@ -34,7 +34,7 @@ addLayer("p", {
         "blank",
         "grid",
         "blank",
-        ["pProxy","grid"]
+        ["layer-proxy", ["pProxy",["grid"]]],
     ],
     
 
@@ -68,7 +68,7 @@ addLayer("p", {
 
     grid: {
         rows: 5, // If these are dynamic make sure to have a max value as well!
-        cols: 2,
+        cols: 5,
         
         getStartData(id) {
             if (id == 202) { 
@@ -79,8 +79,8 @@ addLayer("p", {
             }
             
           },
-        getUnlocked(id) { // Default
-return true
+        getUnlocked(id) { 
+        return true
         },
         getCanClick(data, id) {
             return true
@@ -134,7 +134,7 @@ selez: new String(),
 
     grid: {
         rows: 1, // If these are dynamic make sure to have a max value as well!
-        cols: 4,
+        cols: 5,
         getStartData(id) {
             if (id == 101) { 
                 return "pappagallo"
@@ -147,6 +147,9 @@ selez: new String(),
               }
               if (id == 104) { 
                 return "topo"
+              }
+              if (id == 105) { 
+                return "null"
               }
         },
         

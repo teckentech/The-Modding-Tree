@@ -71,11 +71,22 @@ addLayer("p", {
         cols: 5,
         
         getStartData(id) {
+
+            // array hanno, nome, descrizione, valore, funzione
             if (id == 202) { 
-              return "empty"
+             let nome = ""
+             let descrizione = ""
+                 valore = 0
+             let funzione = ""
+                 return nome 
             }
             else {
-                return "empty"
+                let nome = ""
+             let descrizione = ""
+                 valore = 0
+             let funzione = ""
+                 
+                 return nome
             }
             
           },
@@ -85,13 +96,18 @@ addLayer("p", {
         getCanClick(data, id) {
             return true
         },
-        onClick(data, id) { 
+        onClick(data, id) {     
             setGridData("p", id, punt)
             
         },
         getDisplay(data, id) {
-            return data 
+
+            return data
         },
+      //  getTooltip(arr, id){
+        //    parola = arr[1]
+          //  return parola
+     //   }
     },
 
 
@@ -137,19 +153,49 @@ selez: new String(),
         cols: 5,
         getStartData(id) {
             if (id == 101) { 
-                return "pappagallo"
+                let nome = "pappagallo"
+             let descrizione = "pappagallo descrizione"
+                 valore = 0
+             let funzione = "pappagallo funzione"
+                 const arr = [nome, descrizione, valore, funzione]
+
+                 return arr[1]
               }
               if (id == 102) { 
-                return "cane"
+                let nome = "cane"
+             let descrizione = "cane descrizione"
+                const valore = 0
+             let funzione = "cane funzione"
+                 const arr = [nome, descrizione, valore, funzione]
+
+                 return arr
               }
               if (id == 103) { 
-                return "gatto"
+                let nome = "gatto"
+             let descrizione = "gatto descrizione"
+             const valore = 0
+             let funzione = "gatto funzione"
+                 const arr = [nome, descrizione, valore, funzione]
+
+                 return arr
               }
               if (id == 104) { 
-                return "topo"
+                let nome = "topo"
+             let descrizione = "topo descrizione"
+             const valore = 0
+             let funzione = "topo funzione"
+                 const arr = [nome, descrizione, valore, funzione]
+
+                 return arr
               }
               if (id == 105) { 
-                return "null"
+                let nome = ""
+             let descrizione = ""
+             const valore = 0
+             let funzione = ""
+                 const arr = [nome, descrizione, valore, funzione]
+
+                 return arr
               }
         },
         
@@ -160,6 +206,7 @@ return true
             return true
         },
         onClick(data, id) { 
+            
             punt = data
         },
         getDisplay(data, id) {

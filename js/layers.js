@@ -73,20 +73,22 @@ addLayer("p", {
         getStartData(id) {
 
             // array hanno, nome, descrizione, valore, funzione
-            if (id == 202) { 
-             let nome = ""
-             let descrizione = ""
+             if (id == 202) { 
+              nome = ''
+              descrizione = ''
                  valore = 0
-             let funzione = ""
-                 return nome 
+              funzione = ''
+              const arr = [nome, descrizione, valore, funzione]
+                 return [arr[0], arr[1], arr[2], arr[3]]
+
             }
             else {
-                let nome = ""
-             let descrizione = ""
+                let nome = ''
+             let descrizione = ''
                  valore = 0
-             let funzione = ""
-                 
-                 return nome
+             let funzione = ''
+             const arr = [nome, descrizione, valore, funzione]
+                 return [arr[0], arr[1], arr[2], arr[3]]
             }
             
           },
@@ -102,12 +104,19 @@ addLayer("p", {
         },
         getDisplay(data, id) {
 
-            return data
+            return [data[0]]
+            
         },
-      //  getTooltip(arr, id){
-        //    parola = arr[1]
-          //  return parola
-     //   }
+        getTooltip(data, id){
+            if(id = id){
+                p1 = data[0] +"\n"
+                p2 = data[1] +"\n"
+                p3 = data[2] +"\n"
+                p4 = data[3] +"\n"
+                p5 = p1 + "\n \n" + p2 + "\n \n" + p3 + "\n \n" + p4 + "\n \n"
+            return p5
+            }
+        }
     },
 
 
@@ -153,13 +162,13 @@ selez: new String(),
         cols: 5,
         getStartData(id) {
             if (id == 101) { 
-                let nome = "pappagallo"
-             let descrizione = "pappagallo descrizione"
+                const nome = 'pappagallo'
+             let descrizione = 'pappagallo descrizione'
                  valore = 0
-             let funzione = "pappagallo funzione"
+             let funzione = 'pappagallo funzione'
                  const arr = [nome, descrizione, valore, funzione]
 
-                 return arr[1]
+                 return [arr[0], arr[1], arr[2], arr[3]]
               }
               if (id == 102) { 
                 let nome = "cane"
@@ -168,7 +177,7 @@ selez: new String(),
              let funzione = "cane funzione"
                  const arr = [nome, descrizione, valore, funzione]
 
-                 return arr
+                 return [arr[0], arr[1], arr[2], arr[3]]
               }
               if (id == 103) { 
                 let nome = "gatto"
@@ -177,7 +186,7 @@ selez: new String(),
              let funzione = "gatto funzione"
                  const arr = [nome, descrizione, valore, funzione]
 
-                 return arr
+                 return [arr[0], arr[1], arr[2], arr[3]]
               }
               if (id == 104) { 
                 let nome = "topo"
@@ -186,16 +195,16 @@ selez: new String(),
              let funzione = "topo funzione"
                  const arr = [nome, descrizione, valore, funzione]
 
-                 return arr
+                 return [arr[0], arr[1], arr[2], arr[3]]
               }
               if (id == 105) { 
                 let nome = ""
              let descrizione = ""
-             const valore = 0
+             const valore = null
              let funzione = ""
                  const arr = [nome, descrizione, valore, funzione]
 
-                 return arr
+                 return [arr[0], arr[1], arr[2], arr[3]]
               }
         },
         
@@ -210,7 +219,7 @@ return true
             punt = data
         },
         getDisplay(data, id) {
-            return data 
+            return data[0]
         },
     },
     row: 1, // Row the layer is in on the tree (0 is the first row)

@@ -104,19 +104,16 @@ addLayer("p", {
         },
         getDisplay(data, id) {
 
-            return [data[0]]
+            p1 = data[0]+"\n"+data[2] 
+            return p1
             
         },
-        getTooltip(data, id){
-            if(id = id){
-                p1 = data[0] +"\n"
-                p2 = data[1] +"\n"
-                p3 = data[2] +"\n"
-                p4 = data[3] +"\n"
-                p5 = p1 + "\n \n" + p2 + "\n \n" + p3 + "\n \n" + p4 + "\n \n"
-            return p5
-            }
-        }
+
+        getEffect(data, id){
+         //   if(data.includes(arr[0], 0)){
+                setGridData("p", id, null)
+         //   }
+        },
     },
 
 

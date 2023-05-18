@@ -21,6 +21,15 @@ addLayer("p", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
+   update(diff){
+    for (let row = 0; row < 5; row++) {
+        for (let col = 0; col < 5; col++) {
+          const id = row*100 + col
+          
+        }
+    }
+    
+    },
 
     tabFormat: [
         "main-display",
@@ -66,31 +75,22 @@ addLayer("p", {
     },
     },
 
+    gridThings: {
+        cane: {
+          name: "Cane",
+          description: "A cane"
+        }
+      },
+
     grid: {
         rows: 5, // If these are dynamic make sure to have a max value as well!
         cols: 5,
         
         getStartData(id) {
-
-            // array hanno, nome, descrizione, valore, funzione
-             if (id == 202) { 
-              nome = ''
-              descrizione = ''
-                 valore = 0
-              funzione = ''
-              const arr = [nome, descrizione, valore, funzione]
-                 return [arr[0], arr[1], arr[2], arr[3]]
-
-            }
-            else {
-                let nome = ''
-             let descrizione = ''
-                 valore = 0
-             let funzione = ''
-             const arr = [nome, descrizione, valore, funzione]
-                 return [arr[0], arr[1], arr[2], arr[3]]
-            }
-            
+            return {
+                type: "nothing",
+                amount: new Decimal(0)
+              }
           },
         getUnlocked(id) { 
         return true
@@ -108,6 +108,12 @@ addLayer("p", {
             return p1
             
         },
+
+        getEffect(data, id){
+            
+
+            return data 
+        }
     },
 
 

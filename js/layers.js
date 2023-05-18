@@ -110,9 +110,8 @@ addLayer("p", {
         },
 
         getEffect(data, id){
-         //   if(data.includes(arr[0], 0)){
+         if (id == 202)
                 setGridData("p", id, null)
-         //   }
         },
     },
 

@@ -108,11 +108,6 @@ addLayer("p", {
             return p1
             
         },
-
-        getEffect(data, id){
-         if (id == 202)
-                setGridData("p", id, null)
-        },
     },
 
 

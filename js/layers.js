@@ -22,12 +22,13 @@ addLayer("p", {
         return new Decimal(1)
     },
    update(diff){
-    for (let row = 0; row < 5; row++) {
-        for (let col = 0; col < 5; col++) {
-          const id = row*100 + col
+  //  for (let row = 0; row < 5; row++) {
+  //      for (let col = 0; col < 5; col++) {
+  //        const id = row*100 + col
+  setGridData('p', 202, getGridData('p', 101))
           
-        }
-    }
+        
+    
     
     },
 
@@ -75,22 +76,25 @@ addLayer("p", {
     },
     },
 
-    gridThings: {
-        cane: {
-          name: "Cane",
-          description: "A cane"
-        }
-      },
+ //   gridThings: {
+   //     cane: {
+   //       name: "Cane",
+   //       description: "A cane"
+   //     }
+   //   },
 
     grid: {
         rows: 5, // If these are dynamic make sure to have a max value as well!
         cols: 5,
         
         getStartData(id) {
-            return {
-                type: "nothing",
-                amount: new Decimal(0)
-              }
+            const nome = ''
+            let descrizione = ''
+                valore = 0
+            let funzione = ''
+                const arr = [nome, descrizione, valore, funzione]
+
+                return [arr[0], arr[1], arr[2], arr[3]]
           },
         getUnlocked(id) { 
         return true

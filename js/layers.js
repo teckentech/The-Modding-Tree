@@ -92,8 +92,6 @@ addLayer("p", {
             let descrizione = ''
                 valore = 0
             let funzione = ''
-                
-
           },
         getUnlocked(id) { 
         return true
@@ -113,7 +111,7 @@ addLayer("p", {
         },
 
         getEffect(data, id){
-            
+            data[2] += 1
 
         },
     },

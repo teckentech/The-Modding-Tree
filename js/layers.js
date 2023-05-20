@@ -25,8 +25,8 @@ addLayer("p", {
   //  for (let row = 0; row < 5; row++) {
   //      for (let col = 0; col < 5; col++) {
   //        const id = row*100 + col
-  setGridData('p', 202, getGridData('p', 101))
-          
+  // setGridData('p', 202, getEffect(data, id))
+  player['p'].grid[202] = player['p'].grid[101]
         
     
     
@@ -92,9 +92,8 @@ addLayer("p", {
             let descrizione = ''
                 valore = 0
             let funzione = ''
-                const arr = [nome, descrizione, valore, funzione]
+                
 
-                return [arr[0], arr[1], arr[2], arr[3]]
           },
         getUnlocked(id) { 
         return true
@@ -116,8 +115,7 @@ addLayer("p", {
         getEffect(data, id){
             
 
-            return data 
-        }
+        },
     },
 
 

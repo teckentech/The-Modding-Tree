@@ -22,14 +22,16 @@ addLayer("p", {
         return new Decimal(1)
     },
    update(diff){
-  //  for (let row = 0; row < 5; row++) {
-  //      for (let col = 0; col < 5; col++) {
-  //        const id = row*100 + col
+    for (let row = 0; row < 5; row++) {
+        for (let col = 0; col < 5; col++) {
+          const id = row*100 + col
   // setGridData('p', 202, getEffect(data, id))
-  player['p'].grid[202] = player['p'].grid[101]
-        
+  
+  //   player['p'].grid[202] = player['p'].grid[202].gridEffect('p', 202).times(diff)
+     setGridData('p', 202, getGridData('p', 101).plus(gridEffect('p', 101).times(diff)));  
     
-    
+        }
+    }
     },
 
     tabFormat: [
@@ -92,6 +94,9 @@ addLayer("p", {
             let descrizione = ''
                 valore = 0
             let funzione = ''
+
+            arr = [nome, descrizione, valore, funzione]
+            return arr
           },
         getUnlocked(id) { 
         return true
@@ -104,15 +109,17 @@ addLayer("p", {
             
         },
         getDisplay(data, id) {
-
+            
             p1 = data[0]+"\n"+data[2] 
             return p1
             
         },
 
         getEffect(data, id){
-            data[2] += 1
-
+            if(data = "cane"){
+           val = data[2] += 1
+            return val
+            }
         },
     },
 
